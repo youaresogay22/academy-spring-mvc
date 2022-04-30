@@ -6,7 +6,6 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-// TODO #11: 수정 요청 객체
 @Value
 public class UserModifyRequest {
     @NotNull

@@ -8,7 +8,6 @@
 <form method="post" action="/user/${user.id}/modify">
     아이디: ${user.id}<br />
     나이: <input type="text" name="age" value="${user.age}" /><br />
-    <%-- TODO #6: 이름 추가 --%>
     이름: <input type="text" name="name" value="${user.name}" /><br />
     <input type="submit" />
 </form>
