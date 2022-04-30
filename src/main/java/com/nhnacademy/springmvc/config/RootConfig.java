@@ -1,6 +1,8 @@
 package com.nhnacademy.springmvc.config;
 
 import com.nhnacademy.springmvc.Base;
+import com.nhnacademy.springmvc.repository.StudentRepository;
+import com.nhnacademy.springmvc.repository.StudentRepositoryImpl;
 import com.nhnacademy.springmvc.repository.UserRepository;
 import com.nhnacademy.springmvc.repository.UserRepositoryImpl;
 import org.springframework.context.annotation.Bean;
@@ -18,6 +20,14 @@ public class RootConfig {
         userRepository.addUser("admin", "12345");
 
         return userRepository;
+    }
+
+    @Bean
+    public StudentRepository studentRepository() {
+        StudentRepository studentRepository = new StudentRepositoryImpl();
+        studentRepository.register("김학생", "kim.student@nhnacademy.com", 100, "훌륭");
+
+        return studentRepository;
     }
 
 }
