@@ -12,7 +12,6 @@ public class CookieTestController {
     private static final String COOKIE_NAME = "cook2";
     private static final String MORE_PATH = "/cookie-test/more/write";
 
-    // TODO #1: Request Mapping의 URL 패턴을 추가해주세요.
     @GetMapping("/cookie-test/**/write")
     public String writeCookie(@RequestParam("domain") String domain,
                               HttpServletRequest request,
@@ -28,14 +27,12 @@ public class CookieTestController {
         return "cookieTest";
     }
 
-    // TODO #2: Request Mapping의 URL 패턴을 추가해주세요.
     @GetMapping("/cookie-test/**/read")
     @ResponseBody
     public String readCookie(@CookieValue(COOKIE_NAME) String cookieValue) {
         return cookieValue;
     }
 
-    // TODO #3: Request Mapping의 URL 패턴을 추가해주세요.
     @GetMapping(value = "/cookie-test")
     public String show() {
         return "cookieTest";
