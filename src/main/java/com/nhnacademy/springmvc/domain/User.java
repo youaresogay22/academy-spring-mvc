@@ -3,7 +3,6 @@ package com.nhnacademy.springmvc.domain;
 import lombok.Getter;
 import lombok.Setter;
 
-// TODO #1: User 클래스에 age 필드 추가
 public class User {
     @Getter
     private final String id;
@@ -24,7 +23,6 @@ public class User {
         this.password = password;
     }
 
-    // TODO #6: 비밀번호 마스킹 처리
     private static final String MASK = "*****";
 
     public static User constructPasswordMaskedUser(User user) {

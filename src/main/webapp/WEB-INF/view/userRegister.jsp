@@ -1,4 +1,3 @@
-<%-- TODO #3: 사용자 등록 HTML form --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
