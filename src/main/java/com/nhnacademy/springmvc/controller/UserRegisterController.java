@@ -26,7 +26,9 @@ public class UserRegisterController {
 
     @PostMapping
     public ModelAndView registerUser(@ModelAttribute UserRegisterRequest userRequest) {
-        User user = userRepository.addUser(userRequest.getId(), userRequest.getPassword(), userRequest.getAge());
+        // TODO #9: 이름 추가
+        User user = userRepository.addUser(userRequest.getId(), userRequest.getPassword(),
+                userRequest.getAge(), userRequest.getName());
 
         ModelAndView mav = new ModelAndView("userInfo");
         mav.addObject("user", User.constructPasswordMaskedUser(user));

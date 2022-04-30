@@ -10,6 +10,10 @@ public interface UserRepository {
 
     User addUser(String id, String password);
 
-    User addUser(String id, String password, int age);
+    // TODO #7: 이름 추가
+    User addUser(String id, String password, int age, String name);
+
+    // TODO #13: 수정용 API 추가
+    void modify(User user);
 
 }

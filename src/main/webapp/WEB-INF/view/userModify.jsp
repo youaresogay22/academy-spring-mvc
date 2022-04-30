@@ -5,10 +5,11 @@
     <title>사용자 수정</title>
 </head>
 <body>
-<form method="post" action="/user/modify">
-    아이디: <input type="text" name="id" value="${user.id}" /><br />
-    비밀번호: <input type="password" name="password" value="${user.password}" /><br />
+<form method="post" action="/user/${user.id}/modify">
+    아이디: ${user.id}<br />
     나이: <input type="text" name="age" value="${user.age}" /><br />
+    <%-- TODO #6: 이름 추가 --%>
+    이름: <input type="text" name="name" value="${user.name}" /><br />
     <input type="submit" />
 </form>
 </body>
