@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Objects;
 
-// TODO #1: UserController
-//          GET /user/{userId}          : 사용자 정보 조회
-//          GET /user/{userId}/modify   : 사용자 정보 수정 form
 @Controller
 @RequestMapping("/user")
 public class UserController {
