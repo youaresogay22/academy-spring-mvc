@@ -26,12 +26,10 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 @EnableWebMvc
 @Configuration
 @ComponentScan(basePackageClasses = ControllerBase.class)
-// TODO #2: ApplicationContextAware, MessageSourceAware 인터페이스 구현 선언
 public class WebConfig implements WebMvcConfigurer, ApplicationContextAware, MessageSourceAware {
     private ApplicationContext applicationContext;
     private MessageSource messageSource;
 
-    // TODO #3: ApplicationContextAware, MessageSourceAware 인터페이스 구현 처리
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
@@ -45,7 +43,6 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware, Mes
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         registry.jsp("/WEB-INF/view/", ".jsp");
-        // TODO #5: ThymeleafViewResolver 등록
         registry.viewResolver(thymeleafViewResolver());
     }
 
@@ -72,7 +69,6 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware, Mes
         registry.addViewController("/upload").setViewName("upload");
     }
 
-    // TODO #4: ThymeleafViewResolver 설정
     @Bean
     public ThymeleafViewResolver thymeleafViewResolver() {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
