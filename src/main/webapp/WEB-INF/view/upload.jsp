@@ -1,4 +1,3 @@
-<%-- TODO #5: 파일 업로드 html form --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>

@@ -22,6 +22,4 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
         return new Class[] { WebConfig.class };
     }
 
-    // TODO #2: @MultipartConfig 필요 없음
-
 }
