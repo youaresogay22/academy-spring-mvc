@@ -22,7 +22,6 @@ public class RootConfig {
         return userRepository;
     }
 
-    // TODO #4: `MessageSource` 빈 설정 - 다국어 지원.
     @Bean
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();

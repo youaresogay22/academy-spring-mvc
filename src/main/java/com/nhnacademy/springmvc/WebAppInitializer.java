@@ -2,6 +2,8 @@ package com.nhnacademy.springmvc;
 
 import com.nhnacademy.springmvc.config.RootConfig;
 import com.nhnacademy.springmvc.config.WebConfig;
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletRegistration;
 import org.springframework.core.annotation.Order;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -22,4 +24,20 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
         return new Class[] { WebConfig.class };
     }
 
+    /*
+        // TODO #1: @MultipartConfig
+        @MultipartConfig(
+            location = "/tmp",
+            maxFileSize = -1L,
+            maxRequestSize = -1L,
+            fileSizeThreshold = 1024
+        )
+     */
+    @Override
+    protected void customizeRegistration(ServletRegistration.Dynamic registration) {
+        MultipartConfigElement multipartConfigElement
+            = new MultipartConfigElement("/tmp/", -1, -1, 1024);
+
+        registration.setMultipartConfig(multipartConfigElement);
+    }
 }
