@@ -101,7 +101,6 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware, Mes
         return templateResolver;
     }
 
-    // TODO #3: 컨텐츠 협상 전략 설정
     @Override
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
         configurer.favorParameter(true)

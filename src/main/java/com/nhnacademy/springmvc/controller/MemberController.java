@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-// TODO #1: `/members/{memberId}` 요청을 처리하기 위한 Controller
 @RestController
 public class MemberController {
     private final UserRepository userRepository;
