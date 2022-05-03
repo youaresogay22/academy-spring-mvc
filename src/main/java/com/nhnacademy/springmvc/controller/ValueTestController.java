@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-// TODO #3: `@Value` 활용
 @Controller
 public class ValueTestController {
     private final List<String> list;
