@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
-// TODO #2: Java Config 파일 - @PropertySource 를 통해 properties 파일 가져오기
 @Configuration
 @PropertySource("classpath:some.properties")
 public class PropertiesConfig {

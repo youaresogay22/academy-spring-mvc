@@ -9,9 +9,11 @@ import org.springframework.context.MessageSourceAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.MediaType;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -97,6 +99,17 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware, Mes
         templateResolver.setTemplateMode("HTML5");
 
         return templateResolver;
+    }
+
+    // TODO #3: 컨텐츠 협상 전략 설정
+    @Override
+    public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
+        configurer.favorParameter(true)
+                  .parameterName("format")
+                  .ignoreAcceptHeader(true)
+                  .defaultContentType(MediaType.APPLICATION_JSON)
+                  .mediaType("json", MediaType.APPLICATION_JSON)
+                  .mediaType("xml", MediaType.APPLICATION_XML);
     }
 
 }
