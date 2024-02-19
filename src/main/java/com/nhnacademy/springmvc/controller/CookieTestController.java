@@ -13,7 +13,7 @@ public class CookieTestController {
     private static final String MORE_PATH = "/cookie-test/more/write";
 
     // TODO #1: Request Mapping의 URL 패턴을 추가해주세요.
-    @GetMapping(/* ??? */)
+    @GetMapping("/cookie-test/**/write")
     public String writeCookie(@RequestParam("domain") String domain,
                               HttpServletRequest request,
                               HttpServletResponse response) {
@@ -29,14 +29,14 @@ public class CookieTestController {
     }
 
     // TODO #2: Request Mapping의 URL 패턴을 추가해주세요.
-    @GetMapping(/* ??? */)
+    @GetMapping("/cookie-test/**/read")
     @ResponseBody   // NOTE: 문자열 값을 그대로 출력하기 위해 사용
     public String readCookie(@CookieValue(COOKIE_NAME) String cookieValue) {
         return cookieValue;
     }
 
     // TODO #3: Request Mapping의 URL 패턴을 추가해주세요.
-    @GetMapping(/* ??? */)
+    @GetMapping("/cookie-test")
     public String show() {
         return "cookieTest";
     }
