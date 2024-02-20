@@ -11,6 +11,7 @@ import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.FixedLocaleResolver;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 import java.util.Locale;
 
@@ -26,7 +27,9 @@ public class WebConfig implements WebMvcConfigurer {
     // TODO #1: `LocaleResolver` 설정
     @Bean
     public LocaleResolver localeResolver() {
-        return new FixedLocaleResolver(Locale.KOREAN);
+        SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();
+        sessionLocaleResolver.setDefaultLocale(Locale.KOREA);
+        return new SessionLocaleResolver();
     }
 
     // TODO #2: `LocaleChangeInterceptor` 추가
