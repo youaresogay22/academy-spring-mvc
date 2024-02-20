@@ -5,10 +5,10 @@ import lombok.Setter;
 
 public class User {
     @Getter
-    private final String id;
+    String id;
 
     @Getter
-    private final String password;
+    String password;
 
     @Getter
     @Setter
@@ -27,6 +27,9 @@ public class User {
         this.password = password;
     }
 
+    public User() {
+    }
+
     private static final String MASK = "*****";
 
     public static User constructPasswordMaskedUser(User user) {
@@ -37,4 +40,13 @@ public class User {
         return newUser;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", password='" + password + '\'' +
+                ", age=" + age +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

@@ -4,11 +4,7 @@ import com.nhnacademy.springmvc.domain.User;
 import com.nhnacademy.springmvc.repository.UserRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserRestController {
@@ -22,7 +18,14 @@ public class UserRestController {
     public ResponseEntity<User> getUser(@PathVariable("userId") String userId) {
         User user = userRepository.getUser(userId);
 
-        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(user);
+        return ResponseEntity.ok().body(user);
+    }
+
+    @PostMapping("/users")
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity<String> createUser(@RequestBody User user) {
+        userRepository.addUser(user.getId(), user.getPassword(), user.getAge(), user.getName());
+        return ResponseEntity.status(HttpStatus.CREATED).body("user " + user.toString() + " created");
     }
 
 }
