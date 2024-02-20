@@ -2,6 +2,7 @@ package com.nhnacademy.springmvc.controller;
 
 import java.io.IOException;
 import java.nio.file.Paths;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 // TODO #5: 파일 업로드 처리
 @Controller
 public class FileUploadController {
-    private static final String UPLOAD_DIR = "/Users/user/Downloads/";
+    private static final String UPLOAD_DIR = "/Users/UuLaptop/Downloads/";
 
     @PostMapping("/fileUpload")
     public String processUpload(@RequestParam("file") MultipartFile file,
