@@ -1,7 +1,9 @@
 package com.nhnacademy.springmvc.config;
 
 import com.nhnacademy.springmvc.controller.ControllerBase;
+
 import java.util.Locale;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -39,7 +41,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Bean
     public MultipartResolver multipartResolver() {
         CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
-        multipartResolver.setMaxUploadSize(-1);
+        multipartResolver.setMaxUploadSize(-1);//무제한
 
         return multipartResolver;
     }
