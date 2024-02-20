@@ -2,6 +2,7 @@ package com.nhnacademy.springmvc.controller;
 
 import java.util.Arrays;
 import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,13 @@ public class ThymeleafController {
         model.addAttribute("choice", 2);
 
         return "thymeleaf/hello";
+    }
+
+    @GetMapping("/thymeleaf/index")
+    public String thymeleafIndex(Model model) {
+        model.addAttribute("greeting", "Hello");
+
+        return "thymeleaf/index";
     }
 
 }

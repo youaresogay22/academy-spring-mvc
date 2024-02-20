@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>index</title>
+</head>
+<body>
+<h2>
+    <span th:text="#{greeting}"/><br/>
+</h2>
+
+<div th:if="${#locale.toString() == 'ko' || #locale.toString() == 'ko_KR'}">
+    <a href="?locale=ko"><h2>ko</h2></a>
+    <a href="?locale=en">en</a>
+</div>
+
+<div th:if="${#locale.toString() == 'en'}">
+    <a href="?locale=ko">ko</a>
+    <a href="?locale=en"><h2>en</h2></a>
+</div>
+
+</body>
+</html>
+
+
