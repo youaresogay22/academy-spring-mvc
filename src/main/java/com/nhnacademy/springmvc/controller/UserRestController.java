@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
+
 @RestController
 public class UserRestController {
     private final UserRepository userRepository;
@@ -25,7 +27,7 @@ public class UserRestController {
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<String> createUser(@RequestBody User user) {
         userRepository.addUser(user.getId(), user.getPassword(), user.getAge(), user.getName());
-        return ResponseEntity.status(HttpStatus.CREATED).body("user " + user.toString() + " created");
+        return ResponseEntity.created(URI.create("users")).body("user " + user.toString() + " created");
     }
 
 }
