@@ -1,10 +1,11 @@
 package com.nhnacademy.springmvc.controller;
 
-import java.util.List;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 @Controller
 public class ValueTestController {
@@ -20,7 +21,7 @@ public class ValueTestController {
                             @Value("12345") String key4,
                             @Value("#{systemProperties['java.home']}") String javaHome) {
         return String.join(",", list) + "," + key3 + "," + key4 + "\n"
-            + javaHome;
+                + javaHome;
     }
 
 }

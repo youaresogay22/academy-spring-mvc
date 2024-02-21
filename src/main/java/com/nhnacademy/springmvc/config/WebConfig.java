@@ -13,12 +13,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.LocaleResolver;
-import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
-import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.thymeleaf.spring5.SpringTemplateEngine;
@@ -77,7 +72,7 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware, Mes
         viewResolver.setTemplateEngine(templateEngine());
         viewResolver.setCharacterEncoding("UTF-8");
         viewResolver.setOrder(1);
-        viewResolver.setViewNames(new String[] { "thymeleaf/*" });
+        viewResolver.setViewNames(new String[]{"thymeleaf/*"});
 
         return viewResolver;
     }
@@ -104,11 +99,11 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware, Mes
     @Override
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
         configurer.favorParameter(true)
-                  .parameterName("format")
-                  .ignoreAcceptHeader(true)
-                  .defaultContentType(MediaType.APPLICATION_JSON)
-                  .mediaType("json", MediaType.APPLICATION_JSON)
-                  .mediaType("xml", MediaType.APPLICATION_XML);
+                .parameterName("format")
+                .ignoreAcceptHeader(true)
+                .defaultContentType(MediaType.APPLICATION_JSON)
+                .mediaType("json", MediaType.APPLICATION_JSON)
+                .mediaType("xml", MediaType.APPLICATION_XML);
     }
 
 }
